@@ -148,7 +148,7 @@ app.post('/list', (req, res) => {
   if (cardIds.length > 0) {
     let valid = true;
     cardIds.forEach(cid => {
-      const card = cards.find(c => c.id == cid);
+      const card = cards.find(c => c.id === Number(cid));
       if (!card) {
         logger.error(`Card with id ${cid} not found in cards array.`);
         valid = false;
